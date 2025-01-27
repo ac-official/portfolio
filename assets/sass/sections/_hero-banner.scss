@@ -1,0 +1,116 @@
+/*----------------------------------------------
+    # hero-banner-area
+----------------------------------------------*/
+.hero-banner-area {
+    padding: 349px 0 222px;
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+    .overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to right, #000000, rgba(0,0,0,0) );
+        top: 0;
+        left: 0;
+    }
+    .banner-text {
+        .banenr-subtitle {
+            position: relative;
+            margin-bottom: 12px;
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: capitalize;
+            color: #999999;
+            &::before {
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: 60px;
+                height: 10px;
+                width: 60px;
+                background: url('../img/line.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+        .banenr-title {
+            margin-bottom: 35px;
+            font-size: 65px;
+            line-height: 80px;
+            letter-spacing: 1.4px;
+            font-weight: 700;
+            text-transform: capitalize;
+            color: $white;
+            span {
+                color: var(--main-color);
+                -webkit-text-fill-color: transparent;
+				-webkit-text-stroke-width: 1px;
+            }
+        }
+        .banner-content {
+            margin-bottom: 44px;
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 400;
+            color :#999999;
+        }
+    }
+}
+.banner-slider {
+    position: relative;
+    .slider-nav {
+        position: absolute;
+        right: -120px;
+        bottom: 20px;
+        .slick-list {
+            margin: 0 -10px;
+            width: 720px;
+        }
+        .slick-slide {
+            margin: 0 10px;
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                border: 9px solid rgba(255,255,255,1);
+                left: 0;
+                top: 0;
+                opacity: 0;
+                transition: 0.5s;
+            }
+            img {
+                width: 100%;
+            }
+            &.slick-current {
+                &:after {
+                    opacity: 0.44;
+                }
+                .btn {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            }
+            &.item {
+                position: relative;
+                .btn {
+                    width: auto;
+                    left: 50%;
+                    top: 50%;
+                    position: absolute;
+                    padding: 0;
+                    transition: 0.5s;
+                    margin: -30px 0 0 -30px;
+                }
+            }
+        }
+        .slick-arrow,
+        .slick-dots {
+            display: none !important;
+        }
+    }
+}
